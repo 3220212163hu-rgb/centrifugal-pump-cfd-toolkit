@@ -162,7 +162,7 @@ def main():
     thesis_path = Path('./thesis.docx')
 
     # 输出目录
-    output_dir = Path('D:/AI/SJK/biyesheji/04-论文降重项目/extracted')
+    output_dir = Path(os.environ.get('OUTPUT_DIR', './extracted'))
     output_dir.mkdir(parents=True, exist_ok=True)
 
     print("正在提取论文内容...")

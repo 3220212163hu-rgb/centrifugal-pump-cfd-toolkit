@@ -24,12 +24,13 @@ def test_format_setting():
     run3 = para.add_run("决定了叶轮出口环量")
 
     # 保存文档
-    doc.save('D:/AI/SJK/biyesheji/test_format.docx')
+    test_path = os.environ.get('TEST_OUTPUT', './test_format.docx')
+    doc.save(test_path)
 
-    print("测试文档已保存到：D:/AI/SJK/biyesheji/test_format.docx")
+    print(f"测试文档已保存到：{test_path}")
 
     # 读取文档并验证格式
-    doc2 = Document('D:/AI/SJK/biyesheji/test_format.docx')
+    doc2 = Document(test_path)
     para2 = doc2.paragraphs[0]
 
     print("\n验证格式：")

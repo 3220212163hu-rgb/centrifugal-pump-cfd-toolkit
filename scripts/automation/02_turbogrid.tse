@@ -4,7 +4,7 @@
 
 ! ==== 加载几何（由 WB Journal 已传入；如独立运行需先加载 .inf/.curve）====
 ! READ INF FILE
-!   Filename = D:/AI/SJK/biyesheji/03-仿真结果/test_C04/blade.inf
+!   Filename = ./blade.inf
 ! END
 
 ! ==== 拓扑控制 ====
@@ -37,11 +37,11 @@ CREATE MESH
 
 ! ==== 导出 .gtm ====
 SAVE STATE
-  Filename = D:/AI/SJK/biyesheji/03-仿真结果/test_C04/test_C04.tst
+  Filename = ./test_C04.tst
 END
 
 EXPORT MESH = CFX
-  Filename = D:/AI/SJK/biyesheji/03-仿真结果/test_C04/test_C04.gtm
+  Filename = ./test_C04.gtm
   Overwrite = On
 END
 

@@ -282,7 +282,7 @@ def backfill_chapter(doc_path, chapter_num, rewritten_text_file, placeholder_map
 def main():
     # 配置
     thesis_path = Path('./thesis.docx')
-    output_dir = Path('D:/AI/SJK/biyesheji/04-论文降重项目/extracted')
+    output_dir = Path(os.environ.get('OUTPUT_DIR', './extracted'))
     output_path = Path('./thesis_rewrite.docx')
 
     # 需要回填的章节

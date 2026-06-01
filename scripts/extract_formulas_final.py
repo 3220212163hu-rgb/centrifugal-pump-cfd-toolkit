@@ -4,7 +4,8 @@ import zipfile
 import xml.etree.ElementTree as ET
 import re
 
-docx_path = '/mnt/d/AI/SJK/biyesheji/03-论文正文/03-最终稿/thesis.docx'
+import os
+docx_path = os.environ.get('THESIS_PATH', './thesis.docx')
 
 with zipfile.ZipFile(docx_path, 'r') as z:
     with z.open('word/document.xml') as f:
@@ -226,7 +227,7 @@ for idx, f in enumerate(formulas):
     print(f"LaTeX:   {f['latex']}")
 
 # Also save to file for easy copy
-output_path = '/mnt/d/AI/SJK/biyesheji/scripts/formulas_for_mathtype.txt'
+output_path = os.environ.get('OUTPUT_DIR', './') + '/formulas_for_mathtype.txt'
 with open(output_path, 'w', encoding='utf-8') as out:
     out.write("=" * 80 + "\n")
     out.write("毕业论文公式提取 → MathType TeX格式\n")

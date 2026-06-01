@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  lint:
+    name: Lint & Syntax Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8
+
+      - name: Python syntax check
+        run: |
+          find scripts -name "*.py" -not -path "*/pyfluent/*" -not -path "*/__pycache__/*" -print0 | xargs -0 python -m py_compile
+
+      - name: flake8 lint
+        run: |
+          flake8 scripts/ --count --select=E9,F63,F7,F82 --show-source --statistics --exclude=pyfluent,__pycache__
+          flake8 scripts/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics --exclude=pyfluent,__pycache__
+
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Secret scanning
+        uses: gitleaks/gitleaks-action@v2
+        with:
+          config: |
+            [[rules]]
+            description = "generic api key"
+            regex = '''(?i)(api[_-]?key|token|secret|password|auth)["']?\s*[:=]\s*["'][A-Za-z0-9_\-\.]{20,}["']'''
+            tags = ["api-key"]

@@ -1,0 +1,20 @@
+# 离心泵 CFD 仿真工具链依赖
+# pip install -r requirements.txt
+
+# 文档生成
+python-docx>=0.8.11
+
+# 向量数据库
+qdrant-client>=1.7.0
+sentence-transformers>=2.2.0
+
+# PDF 处理
+PyMuPDF>=1.23.0
+markitdown>=0.0.1
+
+# 爬虫
+requests>=2.28.0
+beautifulsoup4>=4.12.0
+
+# ANSYS PyFluent（可选，仅 ANSYS 用户）
+# ansys-fluent-core>=0.20.0

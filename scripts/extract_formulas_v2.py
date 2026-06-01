@@ -3,7 +3,8 @@
 import zipfile
 import xml.etree.ElementTree as ET
 
-docx_path = '/mnt/d/AI/SJK/biyesheji/03-论文正文/03-最终稿/thesis.docx'
+import os
+docx_path = os.environ.get('THESIS_PATH', './thesis.docx')
 
 with zipfile.ZipFile(docx_path, 'r') as z:
     with z.open('word/document.xml') as f:

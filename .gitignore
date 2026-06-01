@@ -89,3 +89,6 @@ Desktop.ini
 .env.*.local
 credentials.json
 *_credentials.*
+
+# --- 子模块（个人仓库，非开源内容） ---
+pyfluent-thesis-toolkit/
