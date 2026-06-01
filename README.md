@@ -1,7 +1,7 @@
 # 🌀 离心泵 CFD 仿真工具链
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![CI](https://github.com/3220212163hu-rgb/centrifugal-pump-cfd-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/3220212163hu-rgb/centrifugal-pump-cfd-toolkit/actions/workflows/ci.yml)
+[![CI](https://github.com/NMKmono/centrifugal-pump-cfd-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/NMKmono/centrifugal-pump-cfd-toolkit/actions/workflows/ci.yml)
 
 本科毕业论文项目「基于节能优化的离心泵叶轮 β₂–Z 双参数设计与仿真」的 Python 工具集。
 
@@ -41,7 +41,7 @@ scripts/
 ### 安装
 
 ```bash
-git clone https://github.com/3220212163hu-rgb/centrifugal-pump-cfd-toolkit.git
+git clone https://github.com/NMKmono/centrifugal-pump-cfd-toolkit.git
 cd centrifugal-pump-cfd-toolkit
 
 # 复制环境配置
