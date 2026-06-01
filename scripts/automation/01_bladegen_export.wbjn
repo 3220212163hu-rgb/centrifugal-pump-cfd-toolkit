@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+# Open template wbpj, update all systems
+import os
+
+WBPJ_IN  = r"D:\AI\SJK\biyesheji\04-results\C.wbpj"
+LOG_PATH = r"D:\AI\SJK\biyesheji\04-results\step1.log"
+
+def log(msg):
+    f = open(LOG_PATH, "a")
+    f.write(str(msg) + "\n")
+    f.close()
+
+try:
+    open(LOG_PATH, "w").close()
+    log("Open: " + WBPJ_IN)
+    Open(FilePath=WBPJ_IN)
+    log("Opened")
+
+    log("Calling Update() ...")
+    Update()
+    log("Update done")
+
+    Save(Overwrite=True)
+    log("Saved. DONE")
+except Exception, e:
+    log("ERROR: " + repr(e))
+    raise

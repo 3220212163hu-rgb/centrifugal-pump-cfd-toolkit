@@ -1,0 +1,119 @@
+================================================================================
+毕业论文公式提取 → MathType TeX格式  (共31个公式)
+================================================================================
+
+使用方法：
+1. 打开 MathType → 参数 → 转换 → 勾选「TeX输入」
+2. 复制下方LaTeX代码，在MathType中 Ctrl+V 粘贴，自动渲染为公式
+3. 粘贴后 全选公式 → 格式 → 字体 → 设为斜体（Italic）
+
+注意：部分公式因原文Word编码问题需要微调，已用「★修正」标注。
+
+================================================================================
+第2章 理论基础
+================================================================================
+
+[1] 式(2-1) 连续性方程
+\partial u/\partial x+\partial v/\partial y+\partial w/\partial z=0
+
+[2] 式(2-2) Navier-Stokes方程
+\rho (\partial V/\partial t+V\cdot \nabla V)=-\nabla p+\mu \nabla ^{2}V+\rho f
+
+[3] 式(2-3) 旋转坐标系N-S方程
+\rho (\partial V_{r}/\partial t+V_{r}\cdot \nabla V_{r})=-\nabla p+\mu \nabla ^{2}V_{r}-2\rho (\omega \times V_{r})-\rho \omega \times (\omega \times r)
+
+[4] 式(2-4) RANS方程（★修正：原文下标嵌套编码异常，已修正）
+\rho (\partial \bar{u} _{i}/\partial t+\bar{u} _{j}\partial \bar{u} _{i}/\partial x_{j})=-\partial \bar{p}/\partial x_{i}+\partial /\partial x_{j}[\mu (\partial \bar{u} _{i}/\partial x_{j})-\rho \bar{u}' _{i}\bar{u}' _{j}]
+
+[5] 式(2-5) Reynolds应力
+-\rho \bar{u}'_{i}\bar{u}'_{j}=\mu _{t}(\partial \bar{u} _{i}/\partial x_{j}+\partial \bar{u} _{j}/\partial x_{i})-2/3\rho k\delta _{ij}
+
+[6] 式(2-6) SST k方程（★修正：原文β∗已改为\beta^{*}）
+\partial (\rho k)/\partial t+\partial (\rho k\bar{u} _{j})/\partial x_{j}=\tilde{P} _{k}-\beta ^{*}\rho k\omega +\partial /\partial x_{j}[(\mu +\sigma _{k}\mu _{t})\partial k/\partial x_{j}]
+
+[7] 式(2-7) SST ω方程
+\partial (\rho \omega )/\partial t+\partial (\rho \omega \bar{u} _{j})/\partial x_{j}=\alpha \rho S^{2}-\beta \rho \omega ^{2}+\partial /\partial x_{j}[(\mu +\sigma _{\omega }\mu _{t})\partial \omega /\partial x_{j}]+2(1-F_{1})\rho \sigma _{\omega 2}/\omega \cdot \partial k/\partial x_{j}\cdot \partial \omega /\partial x_{j}
+
+[8] 式(2-8) 涡粘性
+\mu _{t}=\rho a_{1}k/\max(a_{1}\omega ,SF_{2})
+
+[9] 式(2-9) 质量流量
+\dot{m} =\rho Q_{d}=998.2\times 18/3600=4.991\ \text{kg/s}
+
+[10] 式(2-10) 扬程（★修正：原文逗号位置异常，已修正为下标）
+H=(p_{t,out}-p_{t,in})/(\rho g)
+
+[11] 式(2-11) 水力功率
+P_{h}=\rho gQH
+
+[12] 式(2-12) 轴功率
+P_{s}=T_{z}\cdot \omega
+
+[13] 式(2-13) 扭矩（★修正：∫已改为LaTeX）
+T_{z}=\int _{S}(r\times F)\cdot \hat{z} \,dS
+
+[14] 式(2-14) 效率
+\eta =P_{h}/P_{s}=\rho gQH/(T_{z}\cdot \omega )
+
+[15] 比转速公式（段落302，非编号公式）
+n_{s}=3.65n\cdot \sqrt{Q}/H^{\frac{3}{4}}
+
+================================================================================
+第3章 建模与网格
+================================================================================
+
+[16] 式(3-1) 流道截面积
+A(\theta )=Q_{d}\cdot \theta /(2\pi \cdot c_{u2})
+
+[17] 式(3-2) 第一层网格高度
+h_{1}=y^{+}\cdot \nu /u_{\tau }
+
+[18] 壁面摩擦速度公式（段落385）
+u_{\tau }=u_{\infty }\cdot \sqrt{0.026/Re^{1/7}}/\sqrt{2}
+
+[19] 来流速度（★修正：原文下标含≈，已拆分）
+u_{\infty }\approx 5\ \text{m/s}
+
+[20] 流道特征长度
+L\approx 0.04\ \text{m}
+
+[21] 运动粘度
+\nu =1.003\times 10^{-6}\ \text{m}^{2}/\text{s}
+
+[22] 雷诺数
+Re\approx 2\times 10^{5}
+
+[23] 壁面摩擦速度值
+u_{\tau }\approx 0.25\ \text{m/s}
+
+[24] y+值
+y^{+}=3
+
+[25] 第一层网格高度计算值
+h_{1}\approx 1.2\times 10^{-5}\ \text{m}\approx 0.012\ \text{mm}
+
+[26] 第一层网格高度取值
+h_{1}=0.02\ \text{mm}
+
+[27] y+符号（非独立公式，仅为文中符号）
+y^{+}
+
+[28] k-ω模型名（非独立公式）
+k-\omega
+
+[29] 收敛残差阈值（段落428）
+10^{-4}
+
+================================================================================
+第5章 参数优化
+================================================================================
+
+[30] 式(5-1) 理论扬程（Euler方程）
+H_{T}=u_{2}\cdot c_{u2}/g=u_{2}^{2}/g-u_{2}\cdot c_{m2}\cdot \cot(\beta _{2})/g
+
+[31] 式(5-2) 效率回归模型（★修正：原文a_{2Z}/a_{4Z}应为a_2·Z/a_4·Z²）
+\eta =a_{0}+a_{1}\beta _{2}+a_{2}Z+a_{3}\beta _{2}^{2}+a_{4}Z^{2}+a_{5}\beta _{2}\cdot Z
+
+================================================================================
+END
+================================================================================

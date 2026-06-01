@@ -1,0 +1,91 @@
+# ============================================================
+# 毕业设计项目 .gitignore
+# 仅开源 scripts/ 目录下的代码
+# 排除：仿真数据、论文正文、临时文件、个人信息
+# ============================================================
+
+# --- 排除所有顶层目录（白名单模式） ---
+# 论文相关（含个人信息，不上传）
+/00-最终提交/
+/00-论文修改历史/
+/01-参考文献/
+/02-jiheh/
+/03-论文正文/
+/04-论文降重项目/
+/05-Origin图表/
+/定稿修改/
+/开题报告和翻译/
+/格式要求/
+/方向修改明细/
+/毕业答辩/
+/新建文件夹/
+/yuanshiwenjian/
+/AI率报告/
+
+# --- 大文件 & 仿真数据 ---
+/ONE_!/
+*.zip
+*.7z
+*.rar
+
+# --- scripts/ 内部的排除项 ---
+# CFD 仿真数据（太大，不能传 Git）
+scripts/pyfluent/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 虚拟环境
+venv/
+.venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 日志和转录文件
+*.trn
+*.log
+logs/
+
+# Qdrant 数据（本地向量库）
+qdrant_data/
+
+# 临时文件和输出
+*.tmp
+*.bak
+*.orig
+output/
+*.cas.h5
+*.dat.h5
+
+# --- Agent 配置文件（个人工作流，非开源内容） ---
+.claude/
+AGENTS.md
+CLAUDE.md
+agent.md
+
+# --- 测试文件 ---
+test_format.docx
+
+# --- 系统文件 ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# --- 敏感配置 ---
+.env
+.env.local
+.env.*.local
+credentials.json
+*_credentials.*

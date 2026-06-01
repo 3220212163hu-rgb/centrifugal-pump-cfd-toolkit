@@ -1,0 +1,48 @@
+! TurboGrid Session: ATM Optimized 网格生成
+! 运行: "C:\Program Files\ANSYS Inc\v242\TurboGrid\bin\cfxtg.exe" -batch 02_turbogrid.tse
+! 目标网格: ~21.6万节点（ATM Optimized 中等密度）
+
+! ==== 加载几何（由 WB Journal 已传入；如独立运行需先加载 .inf/.curve）====
+! READ INF FILE
+!   Filename = D:/AI/SJK/biyesheji/03-仿真结果/test_C04/blade.inf
+! END
+
+! ==== 拓扑控制 ====
+SET TOPOLOGY SET
+  Method = ATM Optimized
+END
+PLACE TOPOLOGY
+
+! ==== 网格尺寸 ====
+MESH DATA
+  Method = Target Passage Mesh Size
+  Target Passage Mesh Size = 216000
+  Boundary Layer Specification Method = Y Plus
+  Y Plus = 30
+  Reynolds Number = 5e5
+END
+
+! ==== Hub/Shroud Tip ====
+DOMAIN = Passage
+  EDGE SPLIT CONTROL = Hub Tip
+    Override = Off
+  END
+  EDGE SPLIT CONTROL = Shroud Tip
+    Override = Off
+  END
+END
+
+! ==== 创建网格 ====
+CREATE MESH
+
+! ==== 导出 .gtm ====
+SAVE STATE
+  Filename = D:/AI/SJK/biyesheji/03-仿真结果/test_C04/test_C04.tst
+END
+
+EXPORT MESH = CFX
+  Filename = D:/AI/SJK/biyesheji/03-仿真结果/test_C04/test_C04.gtm
+  Overwrite = On
+END
+
+QUIT

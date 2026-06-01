@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+import os
+out = r"D:\AI\SJK\biyesheji\04-results\test_C04\smoke.txt"
+try:
+    if not os.path.isdir(os.path.dirname(out)):
+        os.makedirs(os.path.dirname(out))
+    f = open(out, "w")
+    f.write("WB Journal executed OK\n")
+    f.close()
+    t = GetTemplate(TemplateName="BladeGen")
+    s = t.CreateSystem()
+    f = open(out, "a")
+    f.write("BladeGen system created\n")
+    f.close()
+    Save(FilePath=r"D:\AI\SJK\biyesheji\04-results\test_C04\smoke.wbpj", Overwrite=True)
+    f = open(out, "a")
+    f.write("Save OK\n")
+    f.close()
+except Exception, e:
+    f = open(out, "a")
+    f.write("ERROR: " + repr(e) + "\n")
+    f.close()
