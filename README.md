@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![CI](https://github.com/NMKmono/centrifugal-pump-cfd-toolkit/actions/workflows/ci.yml/badge.svg)](https://github.com/NMKmono/centrifugal-pump-cfd-toolkit/actions/workflows/ci.yml)
 
-本科毕业论文项目「基于节能优化的离心泵叶轮 β₂–Z 双参数设计与仿真」的 Python 工具集。
+本科毕业论文项目的 Python 工具集。
 
 涵盖从文献检索、CFD 自动化求解、知识库管理到论文文档生成的完整研究工具链。
 
